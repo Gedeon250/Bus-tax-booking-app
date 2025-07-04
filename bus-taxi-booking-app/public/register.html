@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - BookBus</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">BookBus</div>
+  </nav>
+  
+  <div class="container">
+    <div class="form-container">
+      <h2>Register</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+          <label for="user-type">I am a:</label>
+          <select id="user-type" required>
+            <option value="passenger">Passenger</option>
+            <option value="company">Transport Company</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p>Already have an account? <a href="/login.html">Login here</a></p>
+    </div>
+  </div>
+  
+  <script type="module" src="/js/firebase.js"></script>
+  <script type="module" src="/js/auth.js"></script>
+  <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>
