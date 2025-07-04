@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard - RouteBook</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🚌 RouteBook</h1>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <span class="company-name" id="companyName">Company Dashboard</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Welcome back!</h2>
+                <p>Manage your routes and bookings</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🚌</div>
+                    <div class="stat-content">
+                        <h3 id="totalRoutes">0</h3>
+                        <p>Active Routes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎫</div>
+                    <div class="stat-content">
+                        <h3 id="totalBookings">0</h3>
+                        <p>Total Bookings</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3 id="totalRevenue">$0</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn primary" onclick="showAddRouteModal()">
+                    ➕ Add New Route
+                </button>
+                <button class="action-btn secondary" onclick="loadBookings()">
+                    📊 View Bookings
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <div class="content-header">
+                    <h3 id="contentTitle">Recent Bookings</h3>
+                </div>
+                <div class="content-body" id="contentBody">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Route Modal -->
+    <div id="addRouteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddRouteModal()">&times;</span>
+            <h3>Add New Route</h3>
+            <form id="addRouteForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="routeFrom">From City *</label>
+                        <input type="text" id="routeFrom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="routeTo">To City *</label>
+                        <input type="text" id="routeTo" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="routeTime">Departure Time *</label>
+                        <input type="time" id="routeTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="routeDate">Date *</label>
+                        <input type="date" id="routeDate" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="totalSeats">Total Seats *</label>
+                        <input type="number" id="totalSeats" min="1" max="60" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="routePrice">Price per Seat *</label>
+                        <input type="number" id="routePrice" min="1" step="0.01" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="add-btn">Add Route</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="company.js"></script>
+</body>
+</html>
